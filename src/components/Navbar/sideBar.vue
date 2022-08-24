@@ -10,7 +10,7 @@ const emits = defineEmits(["drawerClosed"]);
 
 // drawer
 const direction = ref("ttb");
-const size = ref("20%");
+const size = ref("18%");
 // 关闭回调，将父组件的openDrawer控制变量重新置为false
 const closeHandler = (): void => {
   emits("drawerClosed");
