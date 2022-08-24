@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  text-decoration: none;
+  transition: box-shadow ease 0.2s;
+}
+body {
+  margin: 0;
+}
+
+/* 以动态添加类的方式切换主题颜色 */
+.theme-color-changer {
+  color: #000;
+  background-color: #fff;
+}
+html.dark .theme-color-changer {
+  color: #fff;
+  background-color: #121212;
+}
+
+/* 媒体查询 */
+@media only screen and (min-width: 598px) {
+  .menu-btn {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 598px) {
+  .nav-link {
+    display: none !important;
+  }
+}
+/* drawer组件的自定义类 - 只能放到全局CSS文件中才有效 */
+.drawer_body {
+  border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+}
+.el-drawer__header {
+  margin-bottom: 0rem !important;
+}
+.el-drawer__body {
+  padding-top: 0 !important;
+}
+.el-tabs__nav-scroll {
+  display: flex;
+  justify-content: center;
+}
+
+/* 设置变量 */
+:root {
+  --border-radius: 24px;
+}
