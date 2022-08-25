@@ -2,23 +2,16 @@
 import { InavItem } from "./types";
 import { Edit, MoreFilled } from "@element-plus/icons-vue";
 import { computed, Ref } from "@vue/reactivity";
-import { onMounted, ref } from "vue";
+import { onMounted, PropType, ref } from "vue";
 import { useRouter } from "vue-router";
 import sideBar from "./sideBar.vue";
 import themeChanger from "./themeChanger.vue";
 
 const router = useRouter();
 
-// 控制navbar在页面滚动时出现的shadow
-let pageScrolled = ref(false);
-onMounted((): void => {
-  window.addEventListener("wheel", function () {
-    if (this.document.documentElement.scrollTop > 0) {
-      pageScrolled.value = true;
-    } else {
-      pageScrolled.value = false;
-    }
-  });
+// 接收控制参数，使navbar在页面滚动时出现shadow
+const props = defineProps({
+  pageScrolled: Boolean as PropType<boolean>,
 });
 
 // navbar的标题集合
