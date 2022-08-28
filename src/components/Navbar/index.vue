@@ -110,6 +110,7 @@ const title = ref("Lee's Blog");
 
 <style scoped lang="scss">
 .backboard {
+  z-index: 1000;
   min-height: 64px;
   // background-color: var(--el-color-white);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
