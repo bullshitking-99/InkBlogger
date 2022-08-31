@@ -58,12 +58,14 @@ const props = defineProps({
     animation: float 4s infinite;
     animation-direction: alternate;
     will-change: top;
-
+    // 使用transform:translate优化动画效果，减少主线程计算次数，消除卡顿感
     @keyframes float {
       from {
+        // top:0px
         transform: translate(0, 0);
       }
       to {
+        // top:15px
         transform: translate(0, 15px);
       }
     }

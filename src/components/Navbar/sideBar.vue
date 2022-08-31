@@ -32,8 +32,8 @@ const tabs_activeName = ref("Home");
     @close="closeHandler()"
   >
     <template #header>
-      <div style="text-align: center">
-        <h3 class="theme-color-changer">{{ title }}</h3>
+      <div style="text-align: center; height: 47px">
+        <h3 style="font-size: 1.4rem">{{ title }}</h3>
       </div>
     </template>
 

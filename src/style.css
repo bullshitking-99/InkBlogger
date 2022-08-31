@@ -1,5 +1,14 @@
+@font-face {
+  font-family: Poppins;
+  src: url("../fonts/Poppins/Poppins-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 * {
-  box-sizing: border-box;
+  font-family: Poppins;
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -9,9 +18,20 @@
 html {
   height: 100%;
 }
+html.dark {
+  background-color: rgb(30, 32, 35);
+}
 
 body {
   height: 100%;
+}
+
+/* hover动效类 */
+.move_down {
+  transform: translate(0, 4px);
+}
+.scale_up {
+  transform: scale(1.1);
 }
 
 /* 以动态添加类的方式切换主题颜色 */
@@ -21,7 +41,7 @@ body {
 }
 html.dark .theme-color-changer {
   color: #fff;
-  background-color: #121212;
+  background-color: rgb(30, 32, 35);
 }
 
 /* 媒体查询 */
@@ -33,6 +53,9 @@ html.dark .theme-color-changer {
 @media only screen and (max-width: 598px) {
   .nav-link {
     display: none !important;
+  }
+  .nav-item h3 {
+    font-size: 1.14rem !important;
   }
 }
 

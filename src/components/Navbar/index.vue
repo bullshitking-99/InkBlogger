@@ -121,7 +121,7 @@ const title = ref("Lee's Blog");
   align-items: center;
 
   h3 {
-    font-size: 0.95rem;
+    font-size: 1.17rem;
   }
 
   .nav-item {
@@ -155,6 +155,6 @@ const title = ref("Lee's Blog");
   }
 }
 .nav-shadow {
-  box-shadow: var(--el-box-shadow);
+  box-shadow: var(--el-box-shadow-light);
 }
 </style>
