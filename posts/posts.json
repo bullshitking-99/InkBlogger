@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "title": "InkBlogger: A simple blogging site for everyone",
+      "tags": ["Vue.js", "project", "frontend"],
+      "cover": "https://dev-to-uploads.s3.amazonaws.com/i/95lvt23xz4ozer5byomi.png",
+      "description": "最深的记忆不如最浅的墨水",
+      "date": "2022-10-6",
+      "name": "InkBlogger"
+    },
+    {
+      "title": "手写节流与防抖？生动展示装饰器原理与实践",
+      "tags": ["frontend", "JavaScript"],
+      "cover": "https://static2.makeuseofimages.com/wordpress/wp-content/uploads/2016/09/javascript-udemy-courses.jpg",
+      "description": "光会默写还不够，理解原理及其背后的设计模式才能举一反三哦",
+      "date": "2022-10-10",
+      "name": "Decorators"
+    }
+  ]
+}

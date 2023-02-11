@@ -1,5 +1,5 @@
 interface Ipost {
-  id: number;
+  name: string;
   cover: string;
   title: string;
   date: string;

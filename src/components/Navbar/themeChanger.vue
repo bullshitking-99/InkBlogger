@@ -12,7 +12,7 @@ let theme: Ref<"dark" | "light"> = ref("dark");
 <template>
   <el-switch
     v-model="theme"
-    @change="toggleDark()"
+    @click="toggleDark()"
     size="large"
     :active-icon="Sunny"
     :inactive-icon="Moon"

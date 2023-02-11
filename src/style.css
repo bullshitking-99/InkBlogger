@@ -74,6 +74,12 @@ html.dark .theme-color-changer {
   justify-content: center;
 }
 
+/* el-divider 宽度调节 */
+.el-divider--horizontal {
+  width: 90% !important;
+  margin: 24px auto !important;
+}
+
 /* 设置变量 */
 :root {
   --border-radius: 24px;

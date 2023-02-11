@@ -61,7 +61,7 @@ const props = defineProps({
     // 使用transform:translate优化动画效果，减少主线程计算次数，消除卡顿感
     @keyframes float {
       from {
-        // top:0px
+        // top:0px - 会卡顿
         transform: translate(0, 0);
       }
       to {

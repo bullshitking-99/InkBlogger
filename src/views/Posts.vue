@@ -1,20 +1,41 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import PostCard from "../components/PostCard/index.vue";
-const post = ref({
-  id: 31232131,
-  cover: "",
-  title: "金九银十送你一份前端超详细知识手册，看完一定会有收获！",
-  date: "2022-8-30",
-  description:
-    "如果你想要将一个rop-name。例如，这里，这里有一个 post 对如，这里有一个 po有一个 post 对如，这里有一个 post 对象：象的所有属一个 post 对象：象的所有属性都当作 props 传入，你可以使用没有参",
-  tags: ["vue", "pinia", "ts"],
-});
+import postsConfig from "../../posts/posts.json";
+
+const posts = ref(postsConfig.posts);
+
+// 为了均匀子盒子的分布，强行使用flex布局
+// 在尾行添加几个空盒子,以使得真盒子左对齐
+const postLen = ref(posts.value.length);
+// 指定一行的盒子数
+const columnNum = ref(4);
 </script>
 
 <template>
-  <h1>Posts</h1>
-  <PostCard :post="post"></PostCard>
+  <h1 style="font-size: 200%; text-align: center">Posts</h1>
+  <el-divider />
+  <article>
+    <PostCard v-for="post in posts" :post="post" :key="post.name"></PostCard>
+    <div
+      class="fake-card"
+      v-for="item in columnNum - (postLen % columnNum)"
+      v-if="postLen % columnNum > 0"
+    ></div>
+  </article>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  .fake-card {
+    // 规格和真盒子一样
+    margin: 20px;
+    width: 100%;
+    max-width: 350px;
+    visibility: hidden;
+  }
+}
+</style>

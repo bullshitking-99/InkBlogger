@@ -23,7 +23,16 @@ const scroll = ({ scrollTop }: { scrollTop: number }): void => {
     <el-container class="container">
       <Navbar :pageScrolled="pageScrolled"></Navbar>
 
-      <el-main> <router-view></router-view> </el-main>
+      <el-main>
+        <Suspense>
+          <template #default>
+            <router-view></router-view>
+          </template>
+          <template #fallback>
+            <h1>Loading...</h1>
+          </template>
+        </Suspense>
+      </el-main>
 
       <el-footer>Footer</el-footer>
     </el-container>
