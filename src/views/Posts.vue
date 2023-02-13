@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import PostCard from "../components/PostCard/index.vue";
-import postsConfig from "../../posts/posts.json";
-
-const posts = ref(postsConfig.posts);
+import { posts } from "../../posts/posts.json";
 
 // 为了均匀子盒子的分布，强行使用flex布局
 // 在尾行添加几个空盒子,以使得真盒子左对齐
-const postLen = ref(posts.value.length);
+const postLen = ref(posts.length);
 // 指定一行的盒子数
 const columnNum = ref(4);
 </script>

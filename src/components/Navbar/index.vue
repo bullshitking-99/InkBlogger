@@ -72,12 +72,8 @@ const title = ref("Lee's Blog");
 
       <!-- Nav标题 -->
       <el-col :span="6" class="nav-item">
-        <router-link
-          to="/"
-          style="margin-left: 1rem"
-          class="theme-color-changer"
-        >
-          <h3>Lee's Blog</h3>
+        <router-link to="/" class="theme-color-changer">
+          <span>Lee's Blog</span>
         </router-link>
       </el-col>
 
@@ -120,8 +116,12 @@ const title = ref("Lee's Blog");
   display: flex;
   align-items: center;
 
-  h3 {
+  span {
+    display: block;
+    margin-left: 1.2em;
+    width: 90px;
     font-size: 1.17rem;
+    font-weight: 600;
   }
 
   .nav-item {

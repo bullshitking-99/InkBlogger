@@ -33,7 +33,7 @@ const tabs_activeName = ref("Home");
   >
     <template #header>
       <div style="text-align: center; height: 47px">
-        <h3 style="font-size: 1.4rem">{{ title }}</h3>
+        <span style="font-size: 1.4rem; font-weight: 600">{{ title }}</span>
       </div>
     </template>
 
@@ -45,9 +45,10 @@ const tabs_activeName = ref("Home");
       >
         <template #label>
           <router-link :key="item.name" :to="item.url">
-            <span style="font-size: 0.95rem; font-weight: 700">{{
-              item.name
-            }}</span>
+            <span
+              style="font-size: 0.95rem; font-weight: 700; user-select: none"
+              >{{ item.name }}</span
+            >
           </router-link>
         </template>
       </el-tab-pane>

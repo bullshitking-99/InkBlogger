@@ -99,10 +99,9 @@
   color: green;
 }
 .vuepress-markdown-body code {
-  margin: 0;
   padding: 0.25rem 0.5rem;
   color: #476582;
-  font-size: 0.85em;
+  font-size: 0.95em;
   background-color: rgba(27, 31, 35, 0.05);
   border-radius: 3px;
 }

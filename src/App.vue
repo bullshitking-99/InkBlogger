@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import Navbar from "./components/Navbar/index.vue";
 
-import { onMounted, ref } from "vue";
+import { nextTick, onMounted, ref } from "vue";
 
 // el-scrollbar bug:不设置height不显示 & container设置高度可显示，但无法设置height：100%
 const viewPortHeight_value = document.documentElement.clientHeight;

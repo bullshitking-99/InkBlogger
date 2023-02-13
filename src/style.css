@@ -84,3 +84,34 @@ html.dark .theme-color-changer {
 :root {
   --border-radius: 24px;
 }
+
+/* 调整vuepress-markdown-body在深色模式下的样式 */
+html.dark .vuepress-markdown-body {
+  background-color: rgb(30, 32, 35);
+  color: rgb(235, 222, 222);
+}
+
+html.dark .vuepress-markdown-body code {
+  color: #58a6ff;
+  background-color: rgba(118, 118, 118, 0.2);
+}
+
+html.dark .vuepress-markdown-body pre code {
+  color: #fff;
+  background-color: transparent;
+}
+
+html.dark .vuepress-markdown-body blockquote {
+  color: rgb(235, 222, 222);
+  border-left: 0.2rem solid #727e8a;
+}
+
+/* 调整post-toc深色模式的颜色 */
+html.dark .container .toc {
+  border-left: 3px solid #2c2c2c;
+  color: #e3e3e3b7;
+}
+html.dark .container .toc ul li:hover {
+  background-color: #c960604a;
+  border-left: 3px solid #d6494b;
+}
