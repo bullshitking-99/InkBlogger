@@ -10,11 +10,8 @@ let viewPortHeight = ref(viewPortHeight_value);
 // 监听滚动事件，向navbar传递阴影控制参数
 let pageScrolled = ref(false);
 const scroll = ({ scrollTop }: { scrollTop: number }): void => {
-  if (scrollTop > 0) {
-    pageScrolled.value = true;
-  } else {
-    pageScrolled.value = false;
-  }
+  // vuesax组件的方法是传入一个 dom元素id 以根据其滚动行为调整样式
+  pageScrolled.value = scrollTop ? true : false;
 };
 </script>
 

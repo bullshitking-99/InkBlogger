@@ -1,7 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import ProjectCard from "../components/ProjectCard/index.vue";
+</script>
 
 <template>
-  <h1>Projects</h1>
+  <div class="project">
+    <ProjectCard></ProjectCard>
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.project {
+  min-height: 65vh;
+}
+</style>

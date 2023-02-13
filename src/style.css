@@ -20,6 +20,7 @@ html {
 }
 html.dark {
   background-color: rgb(30, 32, 35);
+  color: rgb(var(--font-color));
 }
 
 body {
@@ -61,7 +62,7 @@ html.dark .theme-color-changer {
 
 /* drawer组件的自定义类 - 只能放到全局CSS文件中才有效 */
 .drawer_body {
-  border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+  border-radius: 0 0 24px 24px !important;
 }
 .el-drawer__header {
   margin-bottom: 0rem !important;
@@ -82,7 +83,14 @@ html.dark .theme-color-changer {
 
 /* 设置变量 */
 :root {
-  --border-radius: 24px;
+  --border-radius: 12px;
+  --font-color: 44, 62, 80;
+  --background-color: 255, 255, 255;
+}
+
+html.dark {
+  --font-color: 255, 255, 255;
+  --background-color: 30, 32, 35;
 }
 
 /* 调整vuepress-markdown-body在深色模式下的样式 */
