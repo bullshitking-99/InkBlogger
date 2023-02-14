@@ -5,5 +5,10 @@
   "description": "A Little Front-Ender",
   "link": "https://github.com/bullshitking-99",
   "Title": "Lee's Blog",
-  "blogStartYear": "2022"
+  "blogStartYear": "2022",
+  "contact": {
+    "Email": "mailto:liminghe_1999@163.com",
+    "Github": "https://github.com/bullshitking-99",
+    "JueJin": "https://juejin.cn/user/4402870941397416"
+  }
 }

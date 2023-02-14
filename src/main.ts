@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 // markdown渲染样式
 import "../public/styles/vuepress-theme.css";
+// 响应式样式
+import "../public/styles/gridlex.min.css";
 import "./style.css";
 import App from "./App.vue";
 import router from "./router/index";

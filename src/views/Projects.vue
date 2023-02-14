@@ -8,7 +8,7 @@ import { ref } from "vue";
 // 在尾行添加几个空盒子,以使得真盒子左对齐
 const postLen = ref(projects.length);
 // 指定一行的盒子数
-const columnNum = ref(4);
+const columnNum = ref(3);
 </script>
 
 <template>

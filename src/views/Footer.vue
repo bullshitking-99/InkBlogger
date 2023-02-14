@@ -6,7 +6,7 @@ const curYear = new Date().getFullYear();
 
 <template>
   <div class="footer">
-    <h3>{{ user.Title }}</h3>
+    <p>{{ user.Title }}</p>
     <p>
       <i>{{ user.motto }}</i>
     </p>
@@ -33,6 +33,13 @@ const curYear = new Date().getFullYear();
   width: 100%;
   padding-top: 20px;
   line-height: 42px;
+  p:first-child {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  p:last-of-type {
+    opacity: 0.5;
+  }
 
   a {
     color: rgb(var(--link-color));

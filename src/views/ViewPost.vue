@@ -22,7 +22,7 @@ const headElem = ref<NodeListOf<HTMLElement> | any>();
 
 // 用mounted试试，是可以的，说明nextTick在Mounted之前啊
 onMounted(() => {
-  headElem.value = document.querySelectorAll("h2,h3,h4");
+  headElem.value = document.querySelectorAll(".container h2,h3,h4");
 });
 
 // 调度到宏任务也可以
