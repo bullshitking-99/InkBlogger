@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import Navbar from "./components/Navbar/index.vue";
+import Footer from "./views/Footer.vue";
 
 import { nextTick, onMounted, ref } from "vue";
 
@@ -17,10 +18,12 @@ const scroll = ({ scrollTop }: { scrollTop: number }): void => {
 
 <template>
   <el-scrollbar :height="viewPortHeight + 'px'" @scroll="scroll">
-    <el-container class="container">
+    <div class="container">
+      <!-- 制定导航栏 -->
       <Navbar :pageScrolled="pageScrolled"></Navbar>
 
-      <el-main>
+      <!-- 各个板块，默认为HOME -->
+      <div class="main">
         <Suspense>
           <template #default>
             <router-view></router-view>
@@ -29,11 +32,18 @@ const scroll = ({ scrollTop }: { scrollTop: number }): void => {
             <h1>Loading...</h1>
           </template>
         </Suspense>
-      </el-main>
+      </div>
 
-      <el-footer>Footer</el-footer>
-    </el-container>
+      <!-- footer -->
+      <Footer class="footer" />
+    </div>
   </el-scrollbar>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.container {
+  .main {
+    min-height: calc(100vh - 64px);
+  }
+}
+</style>

@@ -43,6 +43,10 @@ const props = defineProps({
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
+      transition: all 0.25s ease;
+      // &:hover {
+      //   transform: scale(1.1);
+      // }
     }
 
     .back {

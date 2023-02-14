@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "title": "InkBlogger",
+      "img": "../project/assets/InkBlogger.png",
+      "description": "最深的记忆不如最浅的墨水",
+      "link": "https://github.com/bullshitking-99/InkBlogger"
+    },
+    {
+      "title": "GymBookSystem",
+      "img": "https://dev-to-uploads.s3.amazonaws.com/i/95lvt23xz4ozer5byomi.png",
+      "description": "面向北工大师生的运动场地预约管理系统",
+      "link": "https://github.com/bullshitking-99/GymBookSystem"
+    }
+  ]
+}

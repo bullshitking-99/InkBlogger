@@ -12,19 +12,29 @@ const columnNum = ref(4);
 
 <template>
   <h1 style="font-size: 200%; text-align: center">Posts</h1>
+  <p>
+    These are my experiences and discoveries in the process of study and
+    practice
+  </p>
   <el-divider />
-  <article>
+  <main>
     <PostCard v-for="post in posts" :post="post" :key="post.name"></PostCard>
     <div
       class="fake-card"
       v-for="item in columnNum - (postLen % columnNum)"
       v-if="postLen % columnNum > 0"
     ></div>
-  </article>
+  </main>
 </template>
 
 <style scoped lang="scss">
-article {
+p {
+  font-size: 100%;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.5;
+}
+main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

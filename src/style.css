@@ -86,11 +86,14 @@ html.dark .theme-color-changer {
   --border-radius: 12px;
   --font-color: 44, 62, 80;
   --background-color: 255, 255, 255;
+  --footer-color: 238, 242, 245;
+  --link-color: 26, 92, 255;
 }
 
 html.dark {
   --font-color: 255, 255, 255;
   --background-color: 30, 32, 35;
+  --footer-color: 20, 20, 20;
 }
 
 /* 调整vuepress-markdown-body在深色模式下的样式 */

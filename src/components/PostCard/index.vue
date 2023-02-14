@@ -31,10 +31,7 @@ const isShadow = ref("always");
       <div class="cover_container">
         <img
           :class="{ scale_up: isShadow === 'never' }"
-          :src="
-            post.cover ||
-            'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png'
-          "
+          :src="post.cover || '../../assets/post/default-vue.png'"
         />
       </div>
       <!-- post信息 -->

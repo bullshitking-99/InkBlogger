@@ -96,12 +96,7 @@ const title = ref("Lee's Blog");
     </el-row>
   </div>
   <!-- navbar下层的等面积实体 -->
-  <div
-    style="
-      min-height: 64px;
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
-    "
-  ></div>
+  <div style="min-height: 64px; border-radius: 0 0 24px 24px"></div>
 </template>
 
 <style scoped lang="scss">
@@ -109,7 +104,7 @@ const title = ref("Lee's Blog");
   z-index: 1000;
   min-height: 64px;
   // background-color: var(--el-color-white);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border-radius: 0 0 24px 24px;
   position: fixed;
   width: 100%;
 

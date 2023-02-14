@@ -1,21 +1,42 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { stringify } from "querystring";
+
+const props = defineProps({
+  title: String,
+  link: String,
+  img: String,
+});
+
+const ProjectTitle = props.title || "My Fantastic Project";
+const backgroundImg = props.img || "../../assets/project/default.png";
+</script>
 
 <template>
   <div class="container">
     <!-- 图片容器 -->
     <div class="imgContainer">
-      <img src="../../assets/project/default.png" />
+      <img :src="backgroundImg" />
 
       <!-- 交互区域 -->
       <div class="interactions">
-        <div class="link"></div>
-        <div class="title"><span> GymBookingSystem</span></div>
+        <div class="link">
+          <a :href="link" target="_blank">
+            <slot name="link-img">
+              <img src="../../assets/project/github.svg" />
+            </slot>
+          </a>
+        </div>
+        <div class="title">
+          <span>{{ ProjectTitle }}</span>
+        </div>
       </div>
     </div>
 
     <!-- 文字容器 -->
     <div class="text">
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      <slot name="description">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </slot>
     </div>
   </div>
 </template>
@@ -26,6 +47,7 @@
 }
 .container {
   width: 350px;
+  height: 250px;
 
   .container:hover {
     .imgContainer {
@@ -50,7 +72,9 @@
     width: 100%;
     height: 250px;
     border-radius: 6px 20px 6px 20px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.52);
     overflow: hidden;
+    cursor: pointer;
 
     transition: all 0.25s ease;
 
@@ -80,21 +104,29 @@
       }
       .link {
         width: 35px;
-
-        background-image: url("../../assets/project/github.svg");
-        background-size: 50%;
-        background-position: 50%;
-        background-repeat: no-repeat;
         background-color: black;
-
         transition: all 0.25s ease;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 50%;
+            height: 50%;
+          }
+        }
       }
       .title {
         font-size: 14px;
-        background-color: rgb(var(--background-color));
+        // filter: blur(2px);
+        background-color: rgba(var(--background-color), 0.8);
         padding: 8px 12px;
         display: flex;
         align-items: center;
+        user-select: none;
       }
     }
   }

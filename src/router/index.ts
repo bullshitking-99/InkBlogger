@@ -4,6 +4,7 @@ import Posts from "../views/Posts.vue";
 import Projects from "../views/Projects.vue";
 import About from "../views/About.vue";
 import ViewPost from "@/views/ViewPost.vue";
+import NotFound from "../views/NotFound.vue";
 const history = createWebHashHistory();
 
 //  根据postsConfig遍历posts，导入md文件并转化为vue组件，作为路由组件使用
@@ -23,6 +24,7 @@ const routes = [
   { path: "/post/:postName", name: "Post", component: ViewPost },
   { path: "/projects", name: "Projects", component: Projects },
   { path: "/about", name: "About", component: About },
+  { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];
 
 const router = createRouter({
