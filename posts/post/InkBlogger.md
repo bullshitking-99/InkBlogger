@@ -4,23 +4,23 @@
 
 ## 什么是 InkBlogger？
 
-InkBlogger 是一个用于 Vue.js 的轻量级博客站点生成器，专为想要在 Vue 中编写博客站点并在 Markdown 中撰写帖子的极客而构建。
+InkBlogger 是一个基于 Vue3 的个人博客模版，专为想要在 Vue 中编写博客站点并在 Markdown 中撰写帖子的极客而构建。
 
-我开发它是有原因的：Vue 并没有真正简单的博客工具。 VuePress 可以工作，但是太复杂了。 因此，出于这个目的，我为 Vue 开发了这个轻量级博客网站：InkBlogger。
+- 灵活的样式管理，通过事先封装的 CSS 类，你可以灵活地对组件布局与交互效果进行自定义，全局使用的 CSS 变量也支持动态主题切换。
+- 统一、简单的用户接口，填写个人信息后你就可以打包并部署在公用(vercel/githubPage/giteePage)或私有服务器中。
+- 内置的 Vite 打包优化，即使添加臃肿的资源也能获得不错的页面加载体验。
 
-您可以将其托管在任何安装了 Nodejs 和 Vue 的服务器上。 实际上，如果您已经在自己的笔记本电脑上构建了博客，则甚至不需要它们：只需直接托管 HTML 和 JavaScript 文件即可！
+## InkBlogger 来源
 
-### InkBlogger 背后
+InkBlogger 的灵感来源于优秀的[VueSax](https://vuesax.com/)组件库和[samzhangjy](https://github.com/samzhangjy)的[VueBlogger](https://samzhangjy.github.io/#/)，你能在 InkBlogger 中发现许多它们的影子，它们都是十分优秀的作品，使用着`Vue2`与`webpack`进行构建。
 
-起初，我只是想为自己搭建一个轻量级的博客。 但是，我发现如果我发布源代码并编写有关如何使用它的教程，开发人员可以花更少的时间来构建博客，而花更多的时间来写帖子。
+但当我发现它们时，Vue3 已大行其道且`CompositionApi`+`TS`+`Vite`的开发栈已让我无法割舍，便着手开始了重建和改造。在前端技术飞速更迭的背景下，优秀的项目需要更新的技术承载下去，感谢他们为开源社区的付出。
 
-所以我决定让 InkBlogger 开源。 这就是这篇文章出现的原因。
-
-当然，InkBlogger 还不是很完整：可能存在错误，并且 UI 可能无法正常工作。 但是，根据我自己的使用，到目前为止没有任何问题。 我将尝试添加更多功能，并在未来使 InkBlogger 更具可定制性。
+在未来，我会考虑继续使用以 Vue3 为核心的技术栈复现在 19 年停产的[vuesax](https://github.com/lusaxweb/vuesax)项目，它是我见过样式最为优雅美观的组件库。您可以了解并关注我的开发进展。
 
 ## 如何使用 InkBlogger？
 
-_注意：确保在继续之前安装了_[_Node.js_](https://nodejs.org/) 和 [_Vue 3_](https://vuejs.org/)。
+_注意：确保在继续之前安装了_[_Node.js_](https://nodejs.org/)_和_[_Vue 3_](https://vuejs.org/) 。
 
 ### 配置
 
@@ -65,7 +65,7 @@ _注意：确保在继续之前安装了_[_Node.js_](https://nodejs.org/) 和 [_
 
 #### 个人介绍
 
-您需要提供一个 MarkDown 文件以显示在“关于”页面上。 在 Markdown 文件中写一些关于你自己的东西：`personal Tailor/aboutMe.md`
+您需要提供一个 MarkDown 文件以显示在 About 页面上。 在 Markdown 文件中写一些关于你自己的东西：`personal Tailor/aboutMe.md`
 
 ```Markdown
 # 👋 Hi, I’m Minghe Lee, a young front-end lover
@@ -82,9 +82,7 @@ _注意：确保在继续之前安装了_[_Node.js_](https://nodejs.org/) 和 [_
 posts
 ├─ assets
 ├─ posts.json
-├─ post-1-title
-│  ├─ post-1-title.md
-│  └─ img
+├─ post-1-title.md
 ├─ post-2-title
 │  ├─ post-2-title.md
 │  └─ img
@@ -93,7 +91,9 @@ posts
    └─ img
 ```
 
-是的，您需要对帖子进行多一项配置：`/posts/posts.json`。 写下您想在博客上显示的帖子，并提供一些相关信息。 例如：
+支持文件夹或直接的 markdown 文件，但注意文件夹需与内含的 markdown 文件同名。
+
+填充博客后，您需要进一步配置：`/posts/posts.json`。 写下您想在博客上显示的帖子，并提供一些相关信息。 例如：
 
 ```JSON
 {
@@ -106,13 +106,13 @@ posts
 },
 ```
 
-请注意，`post`的`name`是它的**文件名**，**不是**它的标题。 错误的配置可能会导致对配置错误的帖子的 404 响应。 一定要检查配置！
+请注意，`post`的`name`是它的**文件名**，**不是**它的标题。 错误的配置可能会导致对配置错误的帖子的 404 响应。
 
-所以，每次你想发布一个帖子，你都需要将它添加到配置文件中。 否则，它根本不会出现在您的博客中。
+所以，每次你想发布一个帖子，你都需要将它添加到配置文件中。
 
 ### 在本地运行你的博客
 
-使用 `yarn dev`（如果您使用的是 `npm`，则使用 `npm run dev`）在 `localhost:8080` 上启动热重载开发服务器。
+使用 `yarn dev`（如果您使用的是 `npm`，则使用 `npm run dev`）启动热重载开发服务器。
 
 ### 手动构建你的博客
 
@@ -120,8 +120,10 @@ posts
 
 运行 `yarn build`（或 `npm` 的 `npm run build`）来构建 InkBlogger。
 
-构建后，`/dist` 目录包含您博客的构建资产（HTML、CSS、JavaScript 等）。
+构建后，可以在 `/dist` 目录看到您博客的构建资源（HTML、CSS、JavaScript 等）。
+
+使用`yarn preview`可以在部署至服务器之前提前检查打包效果。
 
 ## 最后
 
-请在 GitHub 上 star 或 fork InkBlogger 支持我！一如既往，随时报告问题并打开 PR 以帮助开发！
+如果你喜欢这个项目的话，可以在 GitHub 上 浅 star 一下 ，同时也十分欢迎提交`issue`与`pr`，爱你。
