@@ -41,7 +41,7 @@ let obj = new Object({
 
 `hasOwnProperty`方法存在于`Object`这一构造函数的`prototype`属性中，在控制台输入`Object.prototype`，你就会发现在`Object`的这一属性上存储着所有普通对象可以使用的内置方法
 
-![](../../posts/String/image/image_puzr7h3KRE.png)
+![](posts/post/String/image/image_puzr7h3KRE.png)
 
 &#x20;那么这些方法又是如何当普通对象 obj 获取到的呢？这就是对原型和继承的核心概念
 
@@ -49,7 +49,7 @@ let obj = new Object({
 
 在 JavaScript 中，对象有一个特殊的隐藏属性 `[[Prototype]]`（如规范中所命名的），它要么为 `null`，要么就是对另一个对象的引用。该对象被称为“原型”：
 
-![](../../posts/String/image/image_f3obQHHgxJ.png)
+![](posts/post/String/image/image_f3obQHHgxJ.png)
 
 当我们从 `object` 中读取一个缺失的属性时，JavaScript 会自动从原型中获取该属性。在编程中，这被称为“原型继承”。
 

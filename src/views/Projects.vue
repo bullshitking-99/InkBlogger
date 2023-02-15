@@ -42,6 +42,9 @@ p {
   opacity: 0.5;
 }
 main {
+  * {
+    margin-bottom: 30px;
+  }
   max-width: 70vw;
   margin: 100px auto;
   min-height: 65vh;

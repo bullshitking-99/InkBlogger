@@ -7,16 +7,7 @@ import ViewPost from "@/views/ViewPost.vue";
 import NotFound from "../views/NotFound.vue";
 const history = createWebHashHistory();
 
-//  根据postsConfig遍历posts，导入md文件并转化为vue组件，作为路由组件使用
-// let postList: Object[] = [];
-// postsConfig.posts.forEach((post) => {
-//   postList.push({
-//     path: post.name,
-//     component: () => import(`@/../posts/${post.name}.md`),
-//   });
-// });
-
-// const currentPost = () => import(`@/../posts/${$route.params.postName}.md`);
+// 发现vite本身就是路由懒加载的
 
 const routes = [
   { path: "/", name: "Home", component: Home },

@@ -1,4 +1,4 @@
-import postConfig from "../../posts/posts.json";
+import postConfig from "../posts/posts.json";
 
 function getPostsConfig(postsConfig = "posts.json") {
   return postConfig;
