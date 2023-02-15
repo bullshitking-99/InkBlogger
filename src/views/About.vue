@@ -8,7 +8,9 @@ const { html: about } = await import("../../personal Tailor/aboutMe.md");
   <p>Who am I and What am I doing now</p>
   <el-divider />
   <main>
-    <div class="about vuepress-markdown-body" v-html="about"></div>
+    <div class="about center">
+      <div class="vuepress-markdown-body" v-html="about"></div>
+    </div>
     <div class="contact">
       <h2>Contact Me</h2>
       <div class="grid-3_xs-1_sm-2_md-2 gridContainer">
@@ -26,17 +28,22 @@ const { html: about } = await import("../../personal Tailor/aboutMe.md");
 </template>
 
 <style scoped lang="scss">
+@import url(../../public/styles/gridlex.min.css);
+
 p {
   text-align: center;
   font-style: italic;
   opacity: 0.5;
 }
+
 .about {
-  max-width: 805px;
-  margin: 0 auto;
+  height: 50vh;
+
+  .vuepress-markdown-body {
+    max-width: 805px;
+  }
 }
 .contact {
-  margin-top: 100px;
   box-sizing: border-box;
   h2 {
     text-align: center;

@@ -51,8 +51,8 @@ const isShadow = ref("always");
 .card_container {
   margin: 20px;
   .post_card {
-    width: 100%;
-    max-width: 350px;
+    // width: 100%;
+    width: 350px;
     height: 380px;
     border: 0;
     border-radius: var(--border-radius);

@@ -12,7 +12,9 @@ const router = useRouter();
       <el-divider></el-divider>
       <br />
       <p>Dont Go Gentle Into The Night --《Interstellar》</p>
-      <el-button size="large" @click="router.go(-1)">Return With Me</el-button>
+      <el-button size="large" @click="router.push('/')"
+        >Return With Me</el-button
+      >
     </div>
   </div>
 </template>

@@ -1,38 +1,61 @@
 <script lang="ts" setup>
 import { nextTick, onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { posts } from "../../posts/posts.json";
 
 const route = useRoute();
-const postName = route.params.postName;
+const router = useRouter();
+const postName = route.params.postName as string;
 
 // 动态导入md，异步导出一个vue渲染函数
-const { html: post } = await import(`../../posts/${postName}.md`);
+const post = ref<String>("");
+const postCover = ref<string>("");
 
-// 获取 md 封面图
-const { cover } = posts.filter((post) => post.name === postName)[0];
+try {
+  const { html } = await import(`../../posts/post/${postName}/${postName}.md`);
+  post.value = html;
+  // 获取 md 封面图
+  const { cover } = posts.filter((post) => post.name === postName)[0];
+  postCover.value = cover;
+} catch {
+  try {
+    const { html } = await import(`../../posts/post/${postName}.md`);
+    post.value = html;
+    const { cover } = posts.filter((post) => post.name === postName)[0];
+    postCover.value = cover;
+  } catch {
+    // if postName不存在，跳转404
+    console.log("postName不存在，跳转404");
+    router.push("/404");
+  }
+}
 
 // 获取所有标题元素 h1-h4，使用nextTick以在dom生成后调用
 const headElem = ref<NodeListOf<HTMLElement> | any>();
 
 // 在一般的setup中是可获取到dom信息的，但这个异步组件比页面中其它组件挂载地还慢
 // nextTick(() => {
-//   headElem.value = document.querySelectorAll("h1,h2,h3,h4");
+//   console.log("nextTick啦");
+//   headElem.value = document.querySelectorAll("h2,h3,h4");
+//   console.log(headElem.value);
 // });
 
 // 用mounted试试，是可以的，说明nextTick在Mounted之前啊
+
 onMounted(() => {
+  // console.log("挂载啦");
   headElem.value = document.querySelectorAll(".container h2,h3,h4");
+  // console.log(headElem.value);
 });
 
 // 调度到宏任务也可以
-// setTimeout(getHeadElem, 0);
+// setTimeout(() => console.log("宏任务啦"), 0);
 </script>
 
 <template>
   <div class="container">
     <!-- 作者信息介绍 -->
-    <div class="cover"><img :src="cover" alt="cover" /></div>
+    <div class="cover"><img :src="postCover" alt="cover" /></div>
     <!-- 异步组件 -->
     <div
       class="post-body vuepress-markdown-body"
@@ -80,6 +103,7 @@ onMounted(() => {
     position: fixed;
     transition: all 0.3s ease;
     top: 200px;
+    left: 20px;
     border-left: 3px solid #f0e7e7;
     cursor: pointer;
     color: rgba(3, 21, 34, 0.644);

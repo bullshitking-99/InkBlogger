@@ -8,9 +8,21 @@
     },
     {
       "title": "GymBookSystem",
-      "img": "https://dev-to-uploads.s3.amazonaws.com/i/95lvt23xz4ozer5byomi.png",
+      "img": "../project/assets/GymBookSystem.png",
       "description": "面向北工大师生的运动场地预约管理系统",
       "link": "https://github.com/bullshitking-99/GymBookSystem"
+    },
+    {
+      "title": "CapsuleMS",
+      "img": "../project/assets/CapsuleMS.png",
+      "description": "面向北BJUT实验室自产项目，正式名称：时空小胶囊工大师生的运动场地预约管理系统",
+      "link": "https://github.com/bullshitking-99/CapsuleMS"
+    },
+    {
+      "title": "Fighting Design",
+      "img": "../project/assets/Fighting_Design.png",
+      "description": "一款使用 TypeScript + Template 编写的 Vue3 轻量级组件库。",
+      "link": "https://github.com/bullshitking-99/fighting-design"
     }
   ]
 }

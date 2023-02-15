@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { stringify } from "querystring";
+import { useRouter } from "vue-router";
 
 const props = defineProps({
   title: String,
@@ -9,6 +9,11 @@ const props = defineProps({
 
 const ProjectTitle = props.title || "My Fantastic Project";
 const backgroundImg = props.img || "../../assets/project/default.png";
+
+const router = useRouter();
+function goPost(ProjectTitle: String) {
+  router.push(`/post/${ProjectTitle}`);
+}
 </script>
 
 <template>
@@ -26,7 +31,7 @@ const backgroundImg = props.img || "../../assets/project/default.png";
             </slot>
           </a>
         </div>
-        <div class="title">
+        <div class="title" @click="goPost(ProjectTitle)">
           <span>{{ ProjectTitle }}</span>
         </div>
       </div>

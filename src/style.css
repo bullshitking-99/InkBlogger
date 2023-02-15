@@ -27,6 +27,14 @@ body {
   height: 100%;
 }
 
+/* flex垂直居中类 */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* hover动效类 */
 .move_down {
   transform: translate(0, 4px);

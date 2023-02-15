@@ -42,6 +42,8 @@ p {
   opacity: 0.5;
 }
 main {
+  max-width: 70vw;
+  margin: 100px auto;
   min-height: 65vh;
   display: flex;
   flex-wrap: wrap;
