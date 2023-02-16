@@ -4,13 +4,10 @@ import { Ipost } from "./types";
 
 // 使用泛型参数时，defineProps内部不再接收参数，编译器会自动编译为required
 const props = defineProps<{ post: Ipost }>();
-// 不使用泛型参数，也可以在type后加上断言，并手动声明required
-//   {
-//   post: {
-//     type: Object as PropType<Ipost>,
-//     required: true,
-//   },
-// }
+
+// 获取图片的动态路径
+const getSrc = (name: string) =>
+  new URL(`../../../posts/assets/${name}`, import.meta.url).href;
 
 const isShadow = ref("always");
 </script>
@@ -31,7 +28,7 @@ const isShadow = ref("always");
       <div class="cover_container">
         <img
           :class="{ scale_up: isShadow === 'never' }"
-          :src="post.cover || '../../assets/post/default-vue.png'"
+          :src="getSrc(post.cover) || '../../assets/post/default-vue.png'"
         />
       </div>
       <!-- post信息 -->

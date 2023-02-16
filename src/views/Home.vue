@@ -5,6 +5,9 @@ import { reactive, ref } from "vue";
 import user from "../../personal Tailor/user.json";
 import Avatar from "../components/Avatar/index.vue";
 
+// 利用import获取打包文件的动态地址，直接
+import avatarPath from "../../personal Tailor/assets/avatar.png";
+
 const avatar_size = ref("300px");
 </script>
 
@@ -12,7 +15,7 @@ const avatar_size = ref("300px");
   <div class="home">
     <div class="avatar">
       <Avatar
-        :src="user.avatarPath ? user.avatarPath : '../assets/avatar.jpg'"
+        :src="avatarPath ? avatarPath : '../assets/avatar.jpg'"
         :size="avatar_size"
       ></Avatar>
     </div>

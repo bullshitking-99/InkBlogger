@@ -2,25 +2,25 @@
   "projects": [
     {
       "title": "InkBlogger",
-      "img": "../project/assets/InkBlogger.png",
+      "img": "InkBlogger.png",
       "description": "最深的记忆不如最浅的墨水",
       "link": "https://github.com/bullshitking-99/InkBlogger"
     },
     {
       "title": "GymBookSystem",
-      "img": "../project/assets/GymBookSystem.png",
+      "img": "GymBookSystem.png",
       "description": "面向北工大师生的运动场地预约管理系统",
       "link": "https://github.com/bullshitking-99/GymBookSystem"
     },
     {
       "title": "CapsuleMS",
-      "img": "../project/assets/CapsuleMS.png",
+      "img": "CapsuleMS.png",
       "description": "面向北BJUT实验室自产项目，正式名称：时空小胶囊工大师生的运动场地预约管理系统",
       "link": "https://github.com/bullshitking-99/CapsuleMS"
     },
     {
       "title": "Fighting Design",
-      "img": "../project/assets/Fighting_Design.png",
+      "img": "Fighting_Design.png",
       "description": "一款使用 TypeScript + Template 编写的 Vue3 轻量级组件库。",
       "link": "https://github.com/bullshitking-99/fighting-design"
     }

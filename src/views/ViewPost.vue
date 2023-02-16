@@ -2,6 +2,7 @@
 import { nextTick, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { posts } from "../../posts/posts.json";
+import { transformSrcPath } from "../utils/index";
 
 const route = useRoute();
 const router = useRouter();
@@ -30,6 +31,10 @@ try {
   }
 }
 
+// 获取图片的动态路径
+const getSrc = (name: string) =>
+  new URL(`../../posts/assets/${name}`, import.meta.url).href;
+
 // 获取所有标题元素 h1-h4，使用nextTick以在dom生成后调用
 const headElem = ref<NodeListOf<HTMLElement> | any>();
 
@@ -55,7 +60,9 @@ onMounted(() => {
 <template>
   <div class="container">
     <!-- 作者信息介绍 -->
-    <div class="cover"><img :src="postCover" alt="cover" /></div>
+    <div class="cover">
+      <img :src="getSrc(postCover)" alt="cover" />
+    </div>
     <!-- 异步组件 -->
     <div
       class="post-body vuepress-markdown-body"

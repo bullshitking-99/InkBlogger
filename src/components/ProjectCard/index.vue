@@ -14,13 +14,17 @@ const router = useRouter();
 function goPost(ProjectTitle: String) {
   router.push(`/post/${ProjectTitle}`);
 }
+
+// 获取图片的动态路径
+const getSrc = (name: string) =>
+  new URL(`../../../project/assets/${name}`, import.meta.url).href;
 </script>
 
 <template>
   <div class="container">
     <!-- 图片容器 -->
     <div class="imgContainer">
-      <img :src="backgroundImg" />
+      <img :src="getSrc(backgroundImg)" />
 
       <!-- 交互区域 -->
       <div class="interactions">

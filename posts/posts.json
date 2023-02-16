@@ -3,7 +3,7 @@
     {
       "title": "InkBlogger: 为所有人建筑的简约博客",
       "tags": ["Vue.js", "project", "frontend"],
-      "cover": "../posts/assets/default-vue.png",
+      "cover": "default-vue.png",
       "description": "最深的记忆不如最浅的墨水，使用InkBlogger记录和分享你的技术与生活。",
       "date": "2022-10-6",
       "name": "InkBlogger"
@@ -11,7 +11,7 @@
     {
       "title": "手写节流与防抖？生动展示装饰器原理与实践",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "光会默写还不够，理解原理及其背后的设计模式才能举一反三哦。",
       "date": "2022-10-10",
       "name": "Decorators"
@@ -19,7 +19,7 @@
     {
       "title": "你是否想过，字符串没有属性，为什么可以像对象一样调用",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "",
       "date": "2022-10-10",
       "name": "String"
@@ -27,7 +27,7 @@
     {
       "title": "面试题手写bind，原来没有我想得那么简单",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "",
       "date": "2022-10-10",
       "name": "bind"
@@ -35,7 +35,7 @@
     {
       "title": "vite+vuex4.x - hooks - useStore失效解决",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/vuex.jpg",
+      "cover": "vuex.jpg",
       "description": "",
       "date": "2022-10-10",
       "name": "useStore"
@@ -43,7 +43,7 @@
     {
       "title": "还在用typeof、instanceof？是时候给你的类型检查升个级了",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "",
       "date": "2022-10-10",
       "name": "typeCheck"
@@ -51,7 +51,7 @@
     {
       "title": "函数绑定func.bind",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "",
       "date": "2022-10-10",
       "name": "func.bind"
@@ -59,7 +59,7 @@
     {
       "title": "函数原来是个对象",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "",
       "date": "2022-10-10",
       "name": "funcObject"
@@ -67,7 +67,7 @@
     {
       "title": "调度程序：setTimeout与setInterval",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "",
       "date": "2022-10-10",
       "name": "setTimeout_setInterval"
@@ -75,7 +75,7 @@
     {
       "title": "变量作用域与闭包",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "",
       "date": "2022-10-10",
       "name": "Variable_Scope_and_Closures"
@@ -83,7 +83,7 @@
     {
       "title": "递归和堆桟",
       "tags": ["frontend", "JavaScript"],
-      "cover": "../posts/assets/default-js.avif",
+      "cover": "default-js.avif",
       "description": "",
       "date": "2022-10-10",
       "name": "Recursion_stacks"
