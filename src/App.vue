@@ -5,8 +5,7 @@ import Footer from "./views/Footer.vue";
 import { nextTick, onMounted, provide, ref } from "vue";
 
 // el-scrollbar bug:不设置height不显示 & container设置高度可显示，但无法设置height：100%
-const viewPortHeight_value = document.documentElement.clientHeight;
-let viewPortHeight = ref(viewPortHeight_value);
+const viewPortHeight = document.documentElement.clientHeight - 64;
 
 let pageScrolled = ref(false);
 let curScrollTop = ref<number>(0);
@@ -24,11 +23,10 @@ function onScroll({ scrollTop }: { scrollTop: number }): void {
 </script>
 
 <template>
-  <el-scrollbar :height="viewPortHeight + 'px'" @scroll="onScroll">
-    <div class="container">
-      <!-- 制定导航栏 -->
-      <Navbar :pageScrolled="pageScrolled"></Navbar>
-
+  <div class="container">
+    <!-- 制定导航栏 -->
+    <Navbar :pageScrolled="pageScrolled"></Navbar>
+    <el-scrollbar :height="viewPortHeight + 'px'" @scroll="onScroll">
       <!-- 各个板块，默认为HOME -->
       <div class="main">
         <Suspense>
@@ -43,8 +41,8 @@ function onScroll({ scrollTop }: { scrollTop: number }): void {
 
       <!-- footer -->
       <Footer class="footer" />
-    </div>
-  </el-scrollbar>
+    </el-scrollbar>
+  </div>
 </template>
 
 <style scoped lang="scss">
