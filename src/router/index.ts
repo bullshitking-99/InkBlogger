@@ -7,7 +7,7 @@ import ViewPost from "@/views/ViewPost.vue";
 import NotFound from "../views/NotFound.vue";
 const history = createWebHashHistory();
 
-// 发现vite本身就是路由懒加载的
+// vite在开发模式下是路由懒加载的
 
 const routes = [
   { path: "/", name: "Home", component: Home },

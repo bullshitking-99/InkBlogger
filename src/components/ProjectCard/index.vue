@@ -13,6 +13,7 @@ const backgroundImg = props.img || "../../assets/project/default.png";
 const router = useRouter();
 function goPost(ProjectTitle: String) {
   router.push(`/post/${ProjectTitle}`);
+  // if postName.md不存在，将在ViewPost中跳转404
 }
 
 // 获取图片的动态路径

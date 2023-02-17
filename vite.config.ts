@@ -6,7 +6,6 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import path from "path";
 // markdown转换插件
 import { plugin as mdPlugin, Mode } from "vite-plugin-markdown";
-
 import viteCompression from "vite-plugin-compression";
 
 // https://vitejs.dev/config/
@@ -25,6 +24,7 @@ export default defineConfig({
     mdPlugin({
       mode: [Mode.HTML, Mode.VUE],
     }),
+    // 压缩js和css文件
     viteCompression({
       verbose: true,
       disable: false,

@@ -132,5 +132,9 @@ html.dark .container .toc {
 }
 html.dark .container .toc ul li:hover {
   background-color: #c960604a;
-  border-left: 3px solid #d6494b;
+  border-left: 3px solid #d6494b42;
+}
+html.dark .container .toc ul .toc-choosen {
+  background-color: rgba(118, 118, 118, 0.2);
+  color: #58a6ff;
 }

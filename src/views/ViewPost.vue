@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-import { nextTick, onMounted, ref } from "vue";
+import { inject, nextTick, onMounted, Ref, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { posts } from "../../posts/posts.json";
-import { transformSrcPath } from "../utils/index";
+import { searchInsert } from "../utils/index";
+import Toc from "../components/Toc/index.vue";
 
 const route = useRoute();
 const router = useRouter();
 const postName = route.params.postName as string;
 
-// 动态导入md，异步导出一个vue渲染函数
+// 动态导入md，异步导出html
 const post = ref<String>("");
 const postCover = ref<string>("");
-
 try {
   const { html } = await import(`../../posts/post/${postName}/${postName}.md`);
   post.value = html;
@@ -34,27 +34,6 @@ try {
 // 获取图片的动态路径
 const getSrc = (name: string) =>
   new URL(`../../posts/assets/${name}`, import.meta.url).href;
-
-// 获取所有标题元素 h1-h4，使用nextTick以在dom生成后调用
-const headElem = ref<NodeListOf<HTMLElement> | any>();
-
-// 在一般的setup中是可获取到dom信息的，但这个异步组件比页面中其它组件挂载地还慢
-// nextTick(() => {
-//   console.log("nextTick啦");
-//   headElem.value = document.querySelectorAll("h2,h3,h4");
-//   console.log(headElem.value);
-// });
-
-// 用mounted试试，是可以的，说明nextTick在Mounted之前啊
-
-onMounted(() => {
-  // console.log("挂载啦");
-  headElem.value = document.querySelectorAll(".container h2,h3,h4");
-  // console.log(headElem.value);
-});
-
-// 调度到宏任务也可以
-// setTimeout(() => console.log("宏任务啦"), 0);
 </script>
 
 <template>
@@ -71,18 +50,7 @@ onMounted(() => {
     ></div>
 
     <!-- toc组件 -->
-    <div class="toc remove" v-if="true">
-      <ul>
-        <!-- 这里为了设置各级标题的不同样式，添加了类，h1标签类为item-1，h2标签类为item-2 -->
-        <li
-          v-for="item in headElem"
-          :class="`item-${item.tagName.charAt(1)}`"
-          @click="item.scrollIntoView({ behavior: 'smooth', block: 'center' })"
-        >
-          {{ item.innerText }}
-        </li>
-      </ul>
-    </div>
+    <toc></toc>
   </div>
 </template>
 
@@ -104,56 +72,6 @@ onMounted(() => {
       height: 100%;
       // object-fit: cover;
     }
-  }
-
-  .toc {
-    position: fixed;
-    transition: all 0.3s ease;
-    top: 200px;
-    left: 20px;
-    border-left: 3px solid #f0e7e7;
-    cursor: pointer;
-    color: rgba(3, 21, 34, 0.644);
-
-    ul {
-      li {
-        box-sizing: border-box;
-        list-style: none;
-        width: 200px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        background: transparent;
-        transition: all 0.5s ease;
-        padding: 2px 0px;
-        border-left: 3px solid transparent;
-        transform: translateX(-3px);
-      }
-
-      li:hover {
-        background-color: #ffebeb;
-        border-left: 3px solid #cf5659;
-      }
-
-      .item-2 {
-        font-weight: 600;
-        padding-left: 13px;
-      }
-      .item-3 {
-        padding-left: 23px;
-        opacity: 0.9;
-      }
-      .item-4 {
-        padding-left: 33px;
-        opacity: 0.7;
-      }
-    }
-  }
-}
-// 目录消失
-@media (max-width: 1250px) {
-  .remove {
-    transform: translateX(-250px);
   }
 }
 </style>
